@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.info-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.info-wrapper p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #4b5563;
+}
+.info-wrapper:hover p {
+  color: #63a3f7;
+}
+
+.info-icon path {
+  color: #4b5563;
+  fill: #4b5563;
+}
+
+.info-wrapper:hover .info-icon path {
+  color: #63a3f7;
+  fill: #63a3f7;
+}
+
+.ant-pagination .ant-pagination-item {
+  border-radius: 50%;
+}
+
+.ant-picker-suffix {
+  color: #656e79 !important;
+  width: 20px !important;
+}
+.ant-picker-input > input::placeholder {
+  font-family: "Inter" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #000000 !important;
+}
+.ant-select-selector {
+  margin-top: 8px !important;
+  background: #f5f6f7 !important;
+  border-radius: 500px !important;
+  padding: 10px !important;
+  border-style: none !important;
+  font-family: "Inter" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #000000 !important;
+  width: 100% !important;
+  height: max-content !important;
+}
+
+.PlayBlueBtn path {
+  fill: #3d97f2;
+}
+
+.PlayGrayBtn path {
+  fill: #4b5563;
+}
+
+th {
+  font-family: "Inter" !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #4b5563 !important;
+}
+td {
+  font-family: "Inter" !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #101010 !important;
+  margin-bottom: 30px !important;
+}
+
+.StatusWrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* margin-bottom: 10px; */
+}
+.tableClass-tbody tr td {
+  margin: 20px 0 !important;
+}
+
+.tableClass-tbody tr {
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-table-wrapper .ant-table-thead > tr > th {
+  background: unset !important;
+  border-bottom: unset !important;
+}
+:where(.css-dev-only-do-not-override-12jzuas).ant-table-wrapper .ant-table {
+  background: unset !important;
+}
+
+:where(.css-12jzuas).ant-table-wrapper .ant-table {
+  background: unset !important;
+}
+
+.ThreeLinesWhite path {
+  fill: #ffff;
+  stroke: #ffff;
+}
+.ThreeLinesGray path {
+  fill: #656e79;
+  stroke: #656e79;
+}
+
+.ant-drawer-body {
+  padding: 0 !important;
+}
+/* .ant-drawer-content {
+  border-radius: 28px 28px 0px 0px;
+  background: #ffffff;
+  box-shadow: 0px -2px 14px rgba(0, 0, 0, 0.15) !important;
+  height: 456px;
+} */
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-pagination .ant-pagination-item-active {
+  background-color: #ffffff;
+  border-color: unset;
+  border-style: none;
+  box-shadow: 0px 1px 2px #cecece;
+}
+
+:where(.css-12jzuas).ant-pagination .ant-pagination-item-active {
+  background-color: #ffffff;
+  border-color: unset;
+  border-style: none;
+  box-shadow: 0px 1px 2px #cecece;
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-pagination .ant-pagination-item-active a {
+  color: #101010 !important;
+}
+
+:where(.css-12jzuas).ant-pagination .ant-pagination-item-active a {
+  color: #101010 !important;
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-pagination .ant-pagination-item a {
+  color: #4b5563;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+:where(.css-12jzuas).ant-pagination .ant-pagination-item a {
+  color: #4b5563;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-picker {
+  border-style: none;
+  box-shadow: unset;
+  padding: 0;
+}
+
+:where(.css-12jzuas).ant-picker {
+  border-style: none;
+  box-shadow: unset;
+  padding: 0;
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-picker-range .ant-picker-range-separator {
+  padding: 0;
+}
+:where(.css-12jzuas).ant-picker-range .ant-picker-range-separator {
+  padding: 0;
+}
+.custom-class .ant-modal-content {
+  padding: 0 !important;
+}
+.mobileViewDiv {
+  padding: 0px 24px;
+}
+
+.notification-custom .ant-popover-inner {
+  padding: 0 !important;
+}
+:where(.css-dev-only-do-not-override-12jzuas).ant-checkbox-checked .ant-checkbox-inner {
+  background: #101010;
+}
+.range-picker .ant-picker-input {
+  width: 82px !important;
+}
+
+.ant-picker-active-bar {
+  opacity: 0 !important;
+}
+:where(.css-dev-only-do-not-override-12jzuas).ant-picker .ant-picker-input > input {
+  color: #4b5563 !important;
+  font-size: 14px !important;
+  font-family: "Inter" !important;
+  font-weight: 500 !important;
+  line-height: 20px !important;
+}
+
+@media (max-width: 480px) {
+  .ant-calendar-range {
+    width: 320px;
+  }
+  .ant-calendar-range-part {
+    width: 100%;
+  }
+}
+.teamEditSelect .ant-select-selector {
+  margin-top: 0 !important;
+}
+.date-input {
+  background: #f5f6f7;
+  border-radius: 500px;
+  padding: 15px;
+  border-style: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  width: 100%;
+}
+.date-input > div > input {
+  margin: 0 !important;
+}
+.date-input > div > input::placeholder {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: rgb(0, 0, 0);
+}
+
+.workspace-select {
+  /* border: 1px solid red; */
+  /* background-color: #ffff; */
+  margin-top: 5px !important;
+  filter: drop-shadow(rgba(16, 24, 40, 0.06) 0px 2px 12px) !important;
+  background: rgb(255, 255, 255) !important;
+  border-radius: 8px;
+  border-style: none;
+}
+.workspace-select:focus {
+  outline: none !important;
+  border-style: none !important;
+}
+.workspace-select .ant-select-selector {
+  background-color: unset !important;
+  border-radius: unset !important;
+  margin-top: 0 !important;
+  width: 100%;
+  height: 52px;
+  padding: 14px 16px;
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgb(75, 85, 99);
+}
+.workspace-select .ant-select-selection-search-input::placeholder {
+  font-family: Inter, sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: rgb(75, 85, 99) !important;
+}
+.Crm-modal .ant-modal-content {
+  padding: 0 !important;
+}
