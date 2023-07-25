@@ -1,15 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 import { NewWorkSpace } from "../../utils/Images/Images";
+import { PublicButton } from "../../components/PublicButton";
 
 export default function AcceptInvitation() {
+  const handleSubmit = () => {
+    alert("");
+  };
   return (
     <AcceptInvitationWrapper>
       <section>
-        <div>
-          <div className="image-container"> <img src={NewWorkSpace} /></div>
+        <div className="left-div">
+          <div className="image-container">
+            {" "}
+            <img src={NewWorkSpace} />
+          </div>
           <h1>Create a new Workspace</h1>
-          <h4> Yapi team is - a place where they can talk and work together. To create a new team click on the button </h4>
+          <h4>
+            Yapi team is - a place where they can talk and work together. To create a new team click
+            on the button
+          </h4>
+
+          <PublicButton
+            textcard={"CREATE A TEAM"}
+            handleAction={handleSubmit}
+            color={"#FFFFFF"}
+            background={"#3D97F2"}
+          />
         </div>
 
         <div>Accept Invitation</div>
@@ -31,6 +48,18 @@ const AcceptInvitationWrapper = styled.div`
     background: #fff;
     display: flex;
     padding: 0 30px;
+
+    .left-div {
+      position:relative;
+      ::before {
+        position:absolute;
+        content:"";
+        width: 5px;
+        height: 100%;
+        background: red;
+      }
+    }
+
     div {
       width: 100%;
       display: flex;
@@ -64,6 +93,7 @@ const AcceptInvitationWrapper = styled.div`
         font-style: normal;
         font-weight: 400;
         line-height: 160%;
+        padding: 0 0 50px 0;
       }
     }
   }
