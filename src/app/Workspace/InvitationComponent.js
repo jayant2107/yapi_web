@@ -26,7 +26,7 @@ const InvitationComponent = () => {
 
 export default InvitationComponent;
 
-const InvitationComponentWrapper = styled.div`
+export const InvitationComponentWrapper = styled.div`
   font-family: Inter;
   h2 {
     color: #3d3d3d;
@@ -38,7 +38,7 @@ const InvitationComponentWrapper = styled.div`
   p {
     margin: 16px 0 34px 0;
     color: #8f8f8f;
-    // font-size: 20px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 160%;
@@ -100,5 +100,17 @@ const InvitationComponentWrapper = styled.div`
     font-weight: 400;
     line-height: 136%;
     margin-top: 20px;
+  }
+
+  .image_wrapper {
+    width: 100%;
+    height: 204px;
+    display: grid;
+    justify-content: center;
+    margin-bottom: 32px;
+    img{
+      width: 286px;
+      height: 204px;
+    }
   }
 `;
