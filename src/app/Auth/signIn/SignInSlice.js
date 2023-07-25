@@ -14,28 +14,6 @@ export const SignInSlice = createSlice({
       if (actions) {
         state.data = actions.payload;
       }
-    },
-    OpenSideNav: (state, action) => {
-      if (action) {
-        state.sideNav = action.payload;
-      }
-    },
-    NotificationTabs: (state, action) => {
-      if (action) {
-        if (action.payload) {
-          state.notificationTab = action.payload;
-        }
-      }
-    },
-    RememberMe: (state, action) => {
-      if (action.payload) {
-        state.rememberMe = action.payload;
-      }
-    },
-    VerifyOtpAction: (state, action) => {
-      if (action) {
-        state.verifyOtp = action?.payload;
-      }
     }
   }
 });
