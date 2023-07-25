@@ -3,14 +3,22 @@ import React, { useState } from "react";
 import { ForgetWrapper } from "../app/Auth/Forget/ForgetStyle";
 // import { AppLogo } from "../utils/Images/Images";
 import { PublicButton } from "./PublicButton";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Otp from "./Otp";
 import { message } from "antd";
+import { verifyOtp } from "../services/Collections";
+import { useDispatch } from "react-redux";
+import { SignInStep } from "../app/Auth/signIn/SignInSlice";
 
 export const Congratulations = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { state } = useLocation();
+  const { email } = state || {};
   const [otp, setOtp] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const inputStyle = {
     width: "20%",
     height: "52px",
@@ -23,10 +31,23 @@ export const Congratulations = () => {
     navigate("/");
   };
 
-  const isValidOtp = () => {
+  const isValidOtp = async () => {
     if (otp && otp.length == 6) {
-      navigate("/accept-invitation");
-    }else {
+      setLoading(true);
+      let payload = { email: email, otp: otp };
+      let res = await verifyOtp(payload);
+      if (res?.status === 200) {
+        const result = { ...res?.data, token: res?.token };
+        dispatch(SignInStep(result));
+        message.success(res?.message);
+        navigate("/accept-invitation");
+      } else {
+        message.error(
+          res?.response?.data?.message || res?.message || res?.error || "Something went wrong"
+        );
+      }
+      setLoading(false);
+    } else {
       message.error("Please enter valid otp");
     }
   };
@@ -59,6 +80,7 @@ export const Congratulations = () => {
                   handleAction={isValidOtp}
                   color={"#FFFFFF"}
                   background={"#3D97F2"}
+                  isLoading={loading}
                 />
               </ButtonWrapper>
             </div>

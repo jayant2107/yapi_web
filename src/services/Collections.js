@@ -16,8 +16,6 @@ const CREATE_PAYER = "/payment/addPayerDetails";
 const UPDATE_PAYER = "/payment/updatePayerDetails";
 const LOGIN_MANAGER = "auth/login/webapp";
 
-
-
 // Recording Apis
 const RECORDING_LISTING = "recordings/start-stop-status/recordings";
 const RECORDING_DETAILS = "/recordings/start-stop-status/recordings/details";
@@ -32,8 +30,6 @@ const TEAM_LISTING = "teams";
 const MANAGERS_LIST = "teams/managers";
 const ON_GOING_RECORDINGS = "teams/on-going-recordings";
 const ENABLE_DISABLE = "teams/enable-recording";
-
-
 
 // Auth Apis
 
@@ -61,9 +57,7 @@ export const getWorkspaceListing = () => {
 
 // Recording Apis
 export const getRecordingListing = (payload) => {
-  return getApiExternal(
-    `${RECORDING_LISTING}?${payload}`
-  );
+  return getApiExternal(`${RECORDING_LISTING}?${payload}`);
 };
 
 export const getRecordingDetail = (payload) => {
@@ -119,8 +113,8 @@ export const onGoingRecordingList = (id) => {
   return getApiExternal(`${ON_GOING_RECORDINGS}?${id}`);
 };
 
-export const enabledisablerecording = (id , payload) => {
-  return postApiExternal(`${ENABLE_DISABLE}?${id}` , payload);
+export const enabledisablerecording = (id, payload) => {
+  return postApiExternal(`${ENABLE_DISABLE}?${id}`, payload);
 };
 
 export const createPayer = (payload) => {
@@ -132,5 +126,17 @@ export const editPayer = (payload) => {
 };
 
 export const loginInAsManager = (payload) => {
-  return postApiExternal(LOGIN_MANAGER , payload);
+  return postApiExternal(LOGIN_MANAGER, payload);
+};
+
+// New API collection start here
+const CHECK_EMAIL = "/user/check-email";
+const VERIFY_OTP = "/user/verify-otp";
+
+export const checkEmail = (payload) => {
+  return postApi(CHECK_EMAIL, payload);
+};
+
+export const verifyOtp = (payload) => {
+  return postApi(VERIFY_OTP, payload);
 };

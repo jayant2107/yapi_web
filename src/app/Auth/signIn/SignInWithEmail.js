@@ -2,12 +2,13 @@ import React, { useMemo, useState } from "react";
 import { ForgetWrapper } from "../Forget/ForgetStyle";
 import { AppLogo } from "../../../utils/Images/Images";
 import { PublicButton } from "../../../components/PublicButton";
-import styled from "styled-components";
 import { useNavigate } from "react-router";
 import { Field, Form, Formik } from "formik";
 import InputField from "../../../validation/inputField";
 import * as yup from "yup";
 import { useSelector } from "react-redux";
+import { checkEmail } from "../../../services/Collections";
+import { message } from "antd";
 // import { loginUser } from "../../../services/Collections";
 // import { message } from "antd";
 // import { sagaLoginActions } from "./SagaAction";
@@ -20,23 +21,22 @@ export default function SignInWithEmail() {
   const navigate = useNavigate();
   // const dispatch = useDispatch();
 
-
   const initialValues = useMemo(() => {
     if (RememberMeCredentials) {
       return {
-        email: RememberMeCredentials ? RememberMeCredentials?.email : "",
-        password: RememberMeCredentials ? RememberMeCredentials?.password : ""
+        email: RememberMeCredentials ? RememberMeCredentials?.email : ""
+        // password: RememberMeCredentials ? RememberMeCredentials?.password : ""
       };
     } else {
       return {
-        email: "",
-        password: ""
+        email: ""
+        // password: ""
       };
     }
   }, [RememberMeCredentials]);
 
   const validationSchema = yup.object().shape({
-    email: yup.string().email("Email must be a valid email").required("Email is required"),
+    email: yup.string().email("Email must be a valid email").required("Email is required")
   });
 
   // const handleNavigation = (data) => {
@@ -67,18 +67,19 @@ export default function SignInWithEmail() {
   //   }
   // };
 
-  const handleForm = () => {
+  const handleForm = async (payload) => {
+    setLoading(true);
+    let res = await checkEmail(payload);
+    if (res?.status === 200) {
+      message.success(res?.message);
+      navigate("/congratulation", { state: { email: payload?.email } });
+    } else {
+      message.error(
+        res?.response?.data?.message || res?.message || res?.error || "Something went wrong"
+      );
+    }
     setLoading(false);
-    navigate("/congratulation");
-    // setLoading(true);
-    // let requestPayload = {
-    //   email: val?.email,
-    //   password: val?.password
-    // };
-
-    // dispatch({ type: sagaLoginActions.AUTH_LOGIN_SAGA, payload: { requestPayload, LoginCalling } });
   };
-
 
   const FormikFieldValues = [
     {
@@ -88,9 +89,8 @@ export default function SignInWithEmail() {
       placeholder: "Enter your email address",
       component: InputField,
       eyeComponent: null
-    },
+    }
   ];
-
 
   return (
     <ForgetWrapper>
@@ -126,14 +126,6 @@ export default function SignInWithEmail() {
                   <div className="btn-wrapper" style={{ marginBottom: "15px" }}>
                     <PublicButton textcard={"Sign in"} isLoading={loading} />
                   </div>
-                  <NewAccount>
-                    <subheader className="">
-                      Don’t have an account? 
-                      <span style={{ marginLeft: "5px" }} >
-                        <u>Sign up</u>
-                      </span>
-                    </subheader>
-                  </NewAccount>
                 </Form>
               )}
             />
@@ -143,12 +135,3 @@ export default function SignInWithEmail() {
     </ForgetWrapper>
   );
 }
-
-const NewAccount = styled.div`
-  width: 100%;
-  text-align: center;
-
-  span {
-    cursor: pointer;
-  }
-`;
