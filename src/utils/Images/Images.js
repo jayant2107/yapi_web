@@ -36,6 +36,7 @@ import RightPartOfAppLogo from "../../assets/Images/RightPartLogo.png";
 import ManagerLogo from "../../assets/Images/manager.png";
 import YapiBackground from "../../assets/yapi_images/Background.png";
 import NewWorkSpace from "../../assets/yapi_images/newWorkspace.png";
+import InvitationImg from "../../assets/yapi_images/coco.png";
 
 export {
   PublicAppImg,
@@ -75,5 +76,6 @@ export {
   LeftPartOfAppLogo,
   CenterPartOfAppLogo,
   RightPartOfAppLogo,
-  ManagerLogo
+  ManagerLogo,
+  InvitationImg
 };
